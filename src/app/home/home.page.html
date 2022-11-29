@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Urna Eletrônica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Urna Eletrônica</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="urna">
+    <div class="tela">
+        {{digito1?digito1:"0"}} {{digito2?digito2:"0"}}
+    </div>
+    <div class="resultado">
+      {{resultado}} 
+      <img *ngIf="imagem.length > 0 " [src]="imagem">
+    </div>
+    <div class="botoes">
+        <div class="primeira linha">
+          <ion-button color="dark" (click)="digitar('1')">1</ion-button>
+          <ion-button color="dark" (click)="digitar('2')">2</ion-button>
+          <ion-button color="dark" (click)="digitar('3')">3</ion-button>
+        </div>
+        <div class="segunda linha">
+          <ion-button color="dark" (click)="digitar('4')">4</ion-button>
+          <ion-button color="dark" (click)="digitar('5')">5</ion-button>
+          <ion-button color="dark" (click)="digitar('6')">6</ion-button>
+        </div>
+        <div class="terceira linha">
+          <ion-button color="dark" (click)="digitar('7')">7</ion-button>
+          <ion-button color="dark" (click)="digitar('8')">8</ion-button>
+          <ion-button color="dark" (click)="digitar('9')">9</ion-button>
+
+        </div>
+        <div class="quarta linha">
+          <ion-button color="dark" (click)="digitar('0')">0</ion-button>
+        </div>
+        <div class="quinta linha">
+          <ion-button color="dark" (click)="digitar('branco')">Branco</ion-button>
+          <ion-button color="warning" (click)="digitar('corrige')">Corrige</ion-button>
+          <ion-button color="success" (click)="digitar('confirma')">Confirma</ion-button>
+        </div>
+       
+    </div>
+  </div>
+
+  
+</ion-content>
